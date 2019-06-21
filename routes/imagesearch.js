@@ -36,4 +36,24 @@ module.exports = (app) => {
             })
     })
 
+    app.get('/api/image/:search',(req,res)=>{
+        const { search } = req.params;
+        const { offset } = req.query;
+        const googleurl = "https://www.googleapis.com/customsearch/v1?key=";
+        const newData=[];
+        fetch(googleurl + process.env.GOOGLE_API_KEY + "&cx=" + process.env.GOOGLE_CX + "&searchType=image&q=" + search)
+        .then(function (res) {
+            return res.json()
+        })
+        .then((data) => {
+            // res.json({data})        
+            for(var i=0;i<offset;i++){
+               newData.push('<div style="text-align:center;background-color:black;margin:40px 20%"><img src='+data.items[i].link+' width=400px height=300px ></div>')
+                //newData.push(data.items[i].link);
+            }
+           res.send(newData.join(''))
+        })
+
+    })
+
 }
