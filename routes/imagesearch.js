@@ -7,7 +7,7 @@ let fetch = require('node-fetch');
 //require('dotenv').config();
 
 module.exports = (app) => {
-    app.post('/api/imagesearch/:search', (req, res) => {
+    app.post('/:search', (req, res) => {
         const { search } = req.params;
         const { offset } = req.query;
         const googleurl = "https://www.googleapis.com/customsearch/v1?key=";
