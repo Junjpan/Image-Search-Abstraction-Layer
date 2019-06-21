@@ -4,10 +4,10 @@ let mongoose = require('mongoose');
 let Search = require('../modules/search');
 let fetch = require('node-fetch');
 
-//require('dotenv').config();
+require('dotenv').config();
 
 module.exports = (app) => {
-    app.post('/:search', (req, res) => {
+    app.post('/api/imagesearch/:search', (req, res) => {
         const { search } = req.params;
         const { offset } = req.query;
         const googleurl = "https://www.googleapis.com/customsearch/v1?key=";

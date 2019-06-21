@@ -5,11 +5,14 @@ let mongoose=require('mongoose');
 let imageSearchRoutes=require('./routes/imagesearch')
 let latestRoutes=require('./routes/latest');
 let path=require('path');
+let cors=require('cors')
 
+app.use(cors())
 imageSearchRoutes(app);
 latestRoutes(app);
 
-//require('dotenv').config();
+require('dotenv').config();
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}))
 
