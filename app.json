@@ -1,7 +1,7 @@
 {
     "name": "Image search",
     "description": "A app using google API to search image,only 10 pictures per search",
-    "repository": "",
+    "repository": "https://github.com/Junjpan/Image-Search-Abstraction-Layer",
     "keywords": ["node", "express", "heroku","MongoDB"]
   }
   
