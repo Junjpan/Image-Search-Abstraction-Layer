@@ -4,7 +4,7 @@ let mongoose = require('mongoose');
 let Search = require('../modules/search');
 let fetch = require('node-fetch');
 
-require('dotenv').config();
+//require('dotenv').config();
 
 module.exports = (app) => {
     app.post('/api/imagesearch/:search', (req, res) => {
